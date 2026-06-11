@@ -18,10 +18,18 @@ import AdminActivity from "./pages/admin/Activity";
 import AdminClients from "./pages/admin/Clients";
 import AdminSettings from "./pages/admin/Settings";
 import ClientDashboard from "./pages/client/Dashboard";
+import ClientProjects from "./pages/client/Projects";
+import ClientTimeline from "./pages/client/Timeline";
+import ClientVersions from "./pages/client/Versions";
+import ClientReviews from "./pages/client/Reviews";
+import ClientApprovals from "./pages/client/Approvals";
+import ClientDeliverables from "./pages/client/Deliverables";
+import ClientActivity from "./pages/client/Activity";
 import AdminLayout from "./components/layouts/AdminLayout";
 import ClientLayout from "./components/layouts/ClientLayout";
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
   {
     path: "/",
     Component: LandingPage,
@@ -57,6 +65,17 @@ export const router = createBrowserRouter([
     Component: ClientLayout,
     children: [
       { index: true, Component: ClientDashboard },
+      { path: "projects", Component: ClientProjects },
+      { path: "timeline", Component: ClientTimeline },
+      { path: "versions", Component: ClientVersions },
+      { path: "reviews", Component: ClientReviews },
+      { path: "approvals", Component: ClientApprovals },
+      { path: "deliverables", Component: ClientDeliverables },
+      { path: "activity", Component: ClientActivity },
     ],
   },
-]);
+  ],
+  {
+    basename: import.meta.env.BASE_URL,
+  }
+);

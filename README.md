@@ -8,4 +8,9 @@
   Run `npm i` to install the dependencies.
 
   Run `npm run dev` to start the development server.
+
+  ## GitHub Pages deploy
+
+  The app is configured to build a compact static bundle into the `docs/` folder.
+  You can upload or publish only that folder to GitHub Pages instead of the whole source tree.
   
