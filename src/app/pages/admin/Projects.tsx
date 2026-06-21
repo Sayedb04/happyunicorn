@@ -115,9 +115,12 @@ export default function AdminProjects() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
             whileHover={{ y: -4 }}
-            className="p-6 rounded-3xl bg-white border border-gray-100 shadow-lg hover:shadow-xl transition-all"
+            onClick={() => navigate(`/admin/projects/${project.id}`)}
+            className="p-6 rounded-3xl bg-white border border-gray-100 shadow-lg hover:shadow-xl transition-all cursor-pointer"
           >
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div
+              className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6"
+            >
               {/* Project Info */}
               <div className="flex-1">
                 <div className="flex items-start gap-4 mb-4">

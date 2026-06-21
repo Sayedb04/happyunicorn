@@ -34,18 +34,6 @@ export default function AdminLayout() {
   const navItems = [
     { path: "/admin", label: "Dashboard", icon: LayoutDashboard },
     { path: "/admin/projects", label: "Active Projects", icon: FolderKanban },
-    { path: "/admin/timeline", label: "Timeline", icon: Clock },
-    { path: "/admin/versions", label: "Versions", icon: FileVideo },
-    { path: "/admin/reviews", label: "Client Reviews", icon: MessageSquare },
-    { path: "/admin/cutdowns", label: "Cutdowns", icon: Scissors },
-    { path: "/admin/motion-graphics", label: "Motion Graphics", icon: Wand2 },
-    { path: "/admin/vfx", label: "VFX", icon: Sparkles },
-    { path: "/admin/di", label: "DI", icon: Palette },
-    { path: "/admin/sound", label: "Sound", icon: Music },
-    { path: "/admin/languages", label: "Languages", icon: Globe2 },
-    { path: "/admin/approvals", label: "Approvals", icon: CheckCircle2 },
-    { path: "/admin/deliverables", label: "Deliverables", icon: Package },
-    { path: "/admin/activity", label: "Activity Feed", icon: Activity },
     { path: "/admin/clients", label: "Clients", icon: Users },
     { path: "/admin/settings", label: "Settings", icon: Settings },
   ];

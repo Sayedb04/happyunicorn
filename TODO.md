@@ -1,11 +1,12 @@
 # TODO
 
-## New Project flow (Admin)
-- [ ] Add “GForm-like” modal on `/admin/projects` when clicking **New Project** with required fields
-- [ ] Add OK button handler to redirect to `/admin/projects/new` including entered values
-- [ ] Add new admin page at `/admin/projects/new` that renders the create/upload form
-- [ ] Wire new route in `src/app/routes.tsx`
-- [x] Ensure new page uses existing sidebar/topbar (AdminLayout via nested routing)
-- [x] Build/compile to ensure no TS errors
-
+- [ ] Audit `src/app/pages/admin/ProjectDetails.tsx` for missing required module functionality/components causing tabs not to render fully.
+- [ ] Implement any missing components/imports (e.g., ensure no undefined references like `ProgressPill`).
+- [ ] For each required tab/module (Overview, Timeline, Versions, Client Reviews, Cutdowns, Motion Graphics, VFX, DI, Sound, Languages, Approvals, Deliverables, Activity Feed):
+  - [ ] Ensure tables/cards exist (no empty tabs).
+  - [ ] Ensure progress indicators + status badges + tracking exist.
+  - [ ] Ensure realistic production sample data exists (no placeholder/coming soon text).
+  - [ ] Implement required buttons/controls with working state (approve/reject/revision request, export/preview/compare, filters where required).
+- [ ] Run a build/typecheck to confirm Project Details renders without runtime/TS errors.
+- [ ] Manually verify clicking a project card navigates to Project Details and all modules/tabs render correctly.
 
