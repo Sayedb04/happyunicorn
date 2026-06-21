@@ -1,7 +1,13 @@
 import { motion } from "motion/react";
 import { Search, Filter, Plus, Play, Calendar, User, MoreVertical } from "lucide-react";
+import { useNavigate } from "react-router";
+import { useState } from "react";
+import NewProjectModal, { NewProjectFormData } from "../../components/admin/NewProjectModal";
 
 export default function AdminProjects() {
+  const navigate = useNavigate();
+  const [newProjectModalOpen, setNewProjectModalOpen] = useState(false);
+  const [draft, setDraft] = useState<NewProjectFormData | null>(null);
   const projects = [
     {
       id: 1,
@@ -76,6 +82,7 @@ export default function AdminProjects() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => setNewProjectModalOpen(true)}
           className="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#FFD93D] to-[#FF5DA2] text-white font-semibold shadow-lg flex items-center gap-2"
         >
           <Plus className="w-5 h-5" />
@@ -217,6 +224,30 @@ export default function AdminProjects() {
           </motion.div>
         ))}
       </div>
+      <NewProjectModal
+        open={newProjectModalOpen}
+        onOpenChange={setNewProjectModalOpen}
+        initialValues={draft ?? undefined}
+        onOk={(data) => {
+          const params = new URLSearchParams({
+            client: data.client,
+            agency: data.agency,
+            director: data.director,
+            producer: data.producer,
+            editor: data.editor,
+            dop: data.dop,
+            startdate: data.startdate,
+            enddate: data.enddate,
+            versions: data.versions,
+            cutdowns: data.cutdowns,
+          });
+
+          setDraft(data);
+          setNewProjectModalOpen(false);
+          navigate(`/admin/projects/new?${params.toString()}`);
+        }}
+      />
     </div>
   );
 }
+

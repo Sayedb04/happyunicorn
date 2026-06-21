@@ -3,6 +3,7 @@ import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminProjects from "./pages/admin/Projects";
+import AdminProjectsNew from "./pages/admin/ProjectsNew";
 import AdminTimeline from "./pages/admin/Timeline";
 import AdminVersions from "./pages/admin/Versions";
 import AdminReviews from "./pages/admin/Reviews";
@@ -44,6 +45,7 @@ export const router = createBrowserRouter(
     children: [
       { index: true, Component: AdminDashboard },
       { path: "projects", Component: AdminProjects },
+      { path: "projects/new", Component: AdminProjectsNew },
       { path: "timeline", Component: AdminTimeline },
       { path: "versions", Component: AdminVersions },
       { path: "reviews", Component: AdminReviews },
